@@ -1,0 +1,756 @@
+/* CLEAR BROWSER CSS */
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, headero, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+/* ////////  */
+
+
+
+
+$red: #fd1921;
+$black: #111818;
+$white: #ffffff;
+$gray: #808080;
+$header: 60px;
+$header_big: 76px;
+$text: 18px;
+$button: 16px;
+$text_posredni: 16px;
+$prices: 80px;
+$from_age: 80px;
+$exo: Exo, sans-serif;
+$openSans: Open Sans, sans-serif;
+
+
+@mixin button {
+	background-color: $red;
+	box-shadow: 0 0 30px rgba(253, 25, 33, 0.5);
+	text-transform: uppercase;
+	border: none;
+	color: $white;
+	cursor: pointer;
+	@include transition(box-shadow);
+	padding: 12px 40px;
+	font-size: $button;
+	font-weight: bold;
+	
+	&:hover {
+		box-shadow: 0 0 50px rgba(253, 25, 33, 0.7);
+	}
+}
+@mixin button-white {
+	background-color: $white;
+	color: $black;
+	box-shadow: 0 0 30px rgba(0, 0, 0, 0.2);
+	&:hover {
+		box-shadow: 0 0 50px rgba(0, 0, 0, 0.4);
+	}
+}
+@mixin box-shadow-black {
+	box-shadow: 0 0 140px rgba(0, 0, 0, 0.12);
+}
+@mixin transition($what: all, $time: 0.2s, $how: ease-in-out) {
+    -webkit-transition: $what $time $how;
+    -moz-transition:    $what $time $how;
+    -ms-transition:     $what $time $how;
+    -o-transition:      $what $time $how;
+    transition:         $what $time $how;
+}
+
+* {
+	box-sizing: border-box;
+	color: $black;
+}
+body {
+	font-family: $openSans;
+	
+}
+main {
+	position: relative;
+}
+a {
+	text-decoration: none;
+}
+p {
+	line-height: 1.4;
+	font-size: $text;
+	color: $black;
+}
+h1, h2, h3, h4, h5, h6 {
+	text-transform: uppercase;
+	color: $black;
+}
+span {
+	color: $black;
+}
+button {
+	@include button;
+}
+.button-white {
+	@include button-white;
+}
+
+.menu-mobile, .menu-close {
+	display: none;
+}
+
+nav {
+	position: fixed;
+	display: flex;
+	justify-content: flex-end;
+	align-items: center;
+	width: 100%;
+	padding-left: 10%;
+	padding-right: 10%;
+	height: 100px;
+	background-color: rgba(0,0,0,0.3);
+	z-index: 99;
+	
+	.logo {
+		margin-right: auto;
+		
+		img {
+			height: 70px;
+		}
+	}
+	ul {
+		display: flex;
+		justify-content: flex-end;
+	}
+	li {
+		list-style-type: none;
+		text-transform: uppercase;
+		font-weight: 700;
+		padding: 15px 1.55vw;
+		color: $white;
+	}
+	ul a:last-of-type {
+		@include button;
+		margin-left: 1vw;
+		padding: 0 1.55vw;
+	}
+	a {
+		color: $white;
+	}
+}
+/* nav end */
+
+#video-section {
+	position: relative;
+	max-height: 100vh;
+	overflow: hidden;
+	z-index: -99;
+	
+	video {
+		max-height: 100vh;
+		width: 100vw;
+		object-fit: cover;
+		overflow: hidden;
+	}
+}
+.watch {
+	position: absolute;
+	top: 65vh;
+	left: 0;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+
+	width: 100%;
+	cursor: pointer;
+	text-transform: uppercase;
+	font-style: italic;
+	text-align: center;
+	color: $white;
+	font-weight: 700;
+	font-size: 24px;
+	img {
+		height: 18px;
+		padding-left: 20px;
+	}
+}
+/* #video-section end */
+
+#special-offer {
+	width: 76vw;
+	margin-top: -35px;
+	margin-left: 12vw;
+	margin-right: 12vw;
+	margin-bottom: 60px;
+	padding: 4vw 4.5vw;
+	@include box-shadow-black;
+	z-index: 9999;
+	background-color: $white;
+	
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	
+	p {
+		text-transform: uppercase;
+		font-style: italic;
+		font-weight: 800;
+		line-height: 1;
+	}
+	p:nth-of-type(1) {
+		color: $black;
+		font-size: $header;
+		padding-left: 5px;
+	}
+	p:nth-of-type(2) {
+		color: $red;
+		font-size: $header_big;
+	}
+	button {
+		white-space: nowrap;
+		@include button;
+		font-size: 26px;
+		font-weight: bold;
+		padding: 17px 100px;
+		box-shadow: 0 0 40px rgba(0, 0, 0, 0.2);
+		&:hover {
+			box-shadow: 0 0 70px rgba(0, 0, 0, 0.4);
+		}
+	}
+	a {
+		margin-right: 10%;
+	}
+	
+}
+/* #special-offer end */
+
+#slider {
+	padding-left: 18vw;
+	padding-right: 12vw;
+	display: flex;
+	position: relative;
+	overflow: hidden;
+	min-height: 100vh;
+	
+	
+	.leave {
+		position: absolute;
+		top: 18vh;
+		right: -80px;
+		transform: rotate(-45deg);
+		margin-bottom: 40px;
+		font-size: 40px;
+		font-weight: bold;
+		color: $white;
+		background-color: $black;
+		padding: 15px 120px 15px 15px;
+		cursor: pointer;
+		@include transition(all);
+		
+		&:hover {
+			background-color: $red;
+		}
+	}
+	.active {
+		background-color: $red;
+	}
+	.l1 {
+		&:hover {
+			margin-right: 30px;
+			top: calc(18vh + 30px);
+		}
+	}
+	.l2 {
+		top: calc(18vh + 120px);
+		
+		&:hover {
+			margin-right: 30px;
+			top: calc(18vh + 150px);
+		}
+	}	
+	.l3 {
+		top: calc(18vh + 240px);
+		
+		&:hover {
+			margin-right: 30px;
+			top: calc(18vh + 270px);
+		}
+	}	
+	.l4 {
+		top: calc(18vh + 360px);
+		
+		&:hover {
+			margin-right: 30px;
+			top: calc(18vh + 390px);
+		}
+	}	
+	.l5 {
+		top: calc(18vh + 480px);
+		
+		&:hover {
+			margin-right: 30px;
+			top: calc(18vh + 510px);
+		}
+	}	
+	.i2, .i3, .i4, .i5, .n5, .n2, .n3, .n4, 
+	.h2, .h3, .h4, .h5, .p2, .p3, .p4, .p5,
+	.a-way2, .a-way3, .a-way4, .a-way5 {
+		display: none;
+	}
+	
+	.image {
+		width: 50%;
+		display: flex;
+	}
+	img {
+		height: 105vh;
+		width: auto;
+    	object-fit: contain;
+	}
+	.text {     /*	TO MA SIE ZACZYNAC NA SRODKU EKRANU	*/
+		margin-left: -20px;
+		margin-top: 20vh;
+		width: 50%;
+		
+		.top {
+			display: flex;
+			align-items: center;
+			text-transform: uppercase;
+			padding-bottom: 20px;
+		}
+		.number {
+			color: $red;
+			font-size: 180px;
+			font-weight: bold;
+			padding-right: 20px;
+		}
+		.right {
+			display: flex;
+			flex-direction: column;
+			font-size: 30px;
+			font-weight: 600;
+			
+			span {
+				font-size: 55px;
+				font-weight: 700;
+			}
+		}
+		p {
+			font-weight: 500;
+			padding-bottom: 7%;
+		}
+	}
+	.button-white {
+		margin-left: 2.5vw;
+	}
+}
+/* #slider end */
+
+.short {
+	padding-top: 15vh;
+	padding-bottom: 5vh;
+	padding-left: 12vw;
+	padding-right: 12vw;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	
+	div {
+		text-transform: uppercase;
+		font-weight: bold;
+		display: flex;
+		flex-direction: column;
+		font-size: 30px;
+		span {
+			font-size: $from_age;
+			color: $red;
+			font-weight: 800;
+		}
+	}
+	
+	button {
+		white-space: nowrap;
+		@include button;
+		font-size: 26px;
+		font-weight: bold;
+		padding: 17px 70px;
+	}
+}
+/* .short end */
+
+#about {
+	padding-left: 6vw;
+	padding-right: 12vw;
+	height: 100vh;
+	position: relative;
+	display: flex;
+	align-items: center;
+	padding-bottom: 6vh;    /*//////// dostosowac */
+	
+	img {
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100vh;
+		object-fit: cover;
+		z-index: -1;
+	}
+	.text {
+		width: 42%;
+	}
+	.section-header {
+		color: $white;
+	}
+	p {
+		color: $white;
+	}
+	a {
+		margin-right: 8%;
+	}
+}
+.section-header {
+	font-size: $header;
+	text-transform: uppercase;
+	font-weight: bold;
+	padding-bottom: $header/2;
+}
+.section-text {
+	padding-bottom: $text * 3;
+}
+/* #about end */
+
+#prices {
+	display: flex;
+	justify-content: center;
+	line-height: 1.4;
+	margin-top: -15vh;
+	
+	.price {
+		background-color: $white;
+		width: 18vw;
+		padding: 3% 3% 5% 3%;
+		margin: 1.5vw;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
+		@include box-shadow-black;
+		text-align: center;
+		position: relative;
+		overflow: hidden;
+	}
+	.label {
+		position: absolute;
+		top: 25px;
+		left: -58px;
+		background-color: $red;
+		color: $white;
+		padding: 7px 60px;
+		font-weight: bold;
+		font-size: 14px;
+		transform: rotate(-45deg);
+		text-transform: uppercase;
+	}
+	.number {
+		font-size: $prices;
+		font-weight: 700;
+		position: relative;
+		line-height: 1.1;
+		&::after {
+			content: "$";
+			display: block;
+			position: absolute;
+			top: -4px;
+			right: -20px;
+			font-size: 32px;
+		}
+	}
+	.red {
+		color: $red;
+		font-size: 34px;
+		font-weight: bold;
+		padding-top: 12%;
+	}
+	.for {
+		font-weight: 600;
+		font-size: $text;
+		span {
+			color: transparent;
+		}
+	}
+	.more, .star {
+		font-weight: 600;
+		font-size: $text_posredni;
+	}
+	button {
+		margin: 25% 0;
+	}
+	.star {
+		position: absolute;
+		bottom: $text * 1.5;
+		width: 60%;
+	}
+}
+/* prices end */
+
+#gallery {
+	padding-left: 6vw;
+	padding-right: 6vw;
+	margin-top: 10vh;
+	text-align: center;
+	
+	h2 {
+		font-size: $header;
+		font-weight: bold;
+	}
+	p {
+		width: 40%;
+		margin-left: 30%;
+		padding-top: $text;
+		padding-bottom: $text * 3;
+	}
+	.photos {
+		width: 100%;
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: center;
+		
+		img {
+			width: calc(100% / 5);
+			//max-width: 100%;
+			background-size: cover;
+    		background-repeat: no-repeat;
+    		background-position: 50% 50%;
+			height: 56.25%;
+			
+			padding: 9px;
+			box-sizing: border-box;
+			cursor: pointer;
+		}
+	}
+}
+/* gallery end */
+
+#contact {
+	position: relative;
+	
+	#map {
+		width: 100%;
+		height: 100vh;
+		position: relative;
+	}
+	.gmnoprint {
+		display: none;
+	}
+	.gm-style button {
+		display: none;
+	}
+	.map-label {
+		width: 20vw; 
+		height: auto;
+		background-color: $white;
+		padding: 30px;
+		padding-bottom: 40px;
+		font-weight: bold;
+		font-size: $text_posredni;
+		color: #fd1921;
+		position: relative;
+		line-height: 1.6;
+		box-shadow: 0 20px 80px rgba(0, 0, 0, 0.3);
+		
+		/*&::after {
+			content: "";
+			display: block;
+			position: absolute;
+			bottom: -20px;
+			right: 6.15vw;
+			
+			width: 0; 
+			height: 0; 
+			border-left: 25px solid transparent;
+			border-right: 25px solid transparent;
+
+			border-top: 25px solid $red;
+		}*/
+		div:nth-of-type(1) {
+			text-transform: uppercase;
+			font-weight: bold;
+			font-size: $text;
+			padding-bottom: 10px;
+		}
+		div:nth-of-type(2) {
+			font-size: $text_posredni;
+			color: $gray;
+			padding: 0;
+		}
+		div:nth-of-type(3) {
+			color: $red;
+			padding: 0;
+		}
+	}
+}
+
+.form {
+	position: absolute;
+	top: 17vh;
+	left: 12vw;
+	z-index: 9999;
+	padding: 45px 30px;
+	
+	background-color: $white;
+	box-shadow: 0 20px 80px rgba(0, 0, 0, 0.3);
+	
+	h3 {
+		font-size: $header;
+		font-weight: bold;
+		text-align: center;
+		padding-bottom: $header / 2;
+		padding-left: 30px;
+		padding-right: 30px;
+	}
+	
+	form {
+		display: flex;
+		flex-direction: column;
+	}
+	.form-2-inputs {
+		display: flex;
+		
+		input {
+			width: 50%;
+		}
+		#name {
+			margin-right: 10px;
+		}
+		#lastname {
+			margin-left: 10px;
+		}
+	}
+	input, textarea, button {
+		margin-top: 10px;
+		margin-bottom: 10px;
+		font-family: $openSans;
+	}
+	input, textarea {
+		padding: 15px;
+		font-size: $text;
+		border: 1px solid #bbb;
+	}
+	.message-sent {
+		font-size: $text;
+		font-weight: bold;
+		border: none;
+		position: absolute;
+		bottom: 20px;
+		color: forestgreen;
+	}
+	::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+		color: #bbb;
+		opacity: 1; /* Firefox */
+	}
+
+	:-ms-input-placeholder { /* Internet Explorer 10-11 */
+		color: $gray;
+		opacity: 1;
+	}
+
+	::-ms-input-placeholder { /* Microsoft Edge */
+		color: $gray;
+		opacity: 1;
+	}
+}
+
+/* form end */
+/* #contact end */
+
+footer {
+	position: absolute;
+	bottom: 0;
+	color: $gray;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	width: 100%;
+	padding: 20px 10%;
+	z-index: 999;
+	span {
+		color: $gray;
+	}
+	a {
+		color: $gray;
+		@include transition(color);
+	}
+	a:hover {
+		color: $red;
+	}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@media screen and (max-width: 1680px) {
+	$from_age: 30px;
+	
+	#slider .text .right span {
+    	font-size: 50px;
+	}
+	.short {
+		padding-left: 10vw;
+    	padding-right: 10vw;
+	}
+	.short div {
+		font-size: 26px;
+	}
+}
+
+
+
+
