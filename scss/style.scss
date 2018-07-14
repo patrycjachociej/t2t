@@ -119,6 +119,9 @@ h1, h2, h3, h4, h5, h6 {
 	text-transform: uppercase;
 	color: $black;
 }
+section {
+	position: relative;
+}
 span {
 	color: $black;
 }
@@ -143,7 +146,7 @@ nav {
 	padding-right: 10%;
 	height: 100px;
 	background-color: rgba(0,0,0,0.3);
-	z-index: 99;
+	z-index: 9999999999999999;
 	
 	.logo {
 		margin-right: auto;
@@ -175,6 +178,13 @@ nav {
 .no-color {
 	background-color: transparent;
 	margin-top: 20px;
+	
+	a li {
+		color: black;
+	}
+	a:nth-of-type(6) li {
+		color: $white !important;
+	}
 }
 /* nav end */
 
@@ -270,7 +280,7 @@ nav {
 }
 /* #special-offer end */
 
-#slider {
+.slider {
 	padding-left: 18vw;
 	padding-right: 12vw;
 	display: flex;
@@ -281,7 +291,7 @@ nav {
 	
 	.leave {
 		position: absolute;
-		top: 18vh;
+		top: 7vw;
 		right: -80px;
 		transform: rotate(-45deg);
 		margin-bottom: 40px;
@@ -303,39 +313,39 @@ nav {
 	.l1 {
 		&:hover {
 			margin-right: 30px;
-			top: calc(18vh + 30px);
+			top: calc(7vw + 30px);
 		}
 	}
 	.l2 {
-		top: calc(18vh + 120px);
+		top: calc(7vw + 120px);
 		
 		&:hover {
 			margin-right: 30px;
-			top: calc(18vh + 150px);
+			top: calc(7vw + 150px);
 		}
 	}	
 	.l3 {
-		top: calc(18vh + 240px);
+		top: calc(7vw + 240px);
 		
 		&:hover {
 			margin-right: 30px;
-			top: calc(18vh + 270px);
+			top: calc(7vw + 270px);
 		}
 	}	
 	.l4 {
-		top: calc(18vh + 360px);
+		top: calc(7vw + 360px);
 		
 		&:hover {
 			margin-right: 30px;
-			top: calc(18vh + 390px);
+			top: calc(7vw + 390px);
 		}
 	}	
 	.l5 {
-		top: calc(18vh + 480px);
+		top: calc(7vw + 480px);
 		
 		&:hover {
 			margin-right: 30px;
-			top: calc(18vh + 510px);
+			top: calc(7vw + 510px);
 		}
 	}	
 	.i2, .i3, .i4, .i5, .n5, .n2, .n3, .n4, 
@@ -344,19 +354,15 @@ nav {
 		display: none;
 	}
 	
-	.image {
-		width: 50%;
-		display: flex;
-	}
 	img {
-		height: 105vh;
-		width: auto;
+		width: 31vw;
     	object-fit: contain;
 	}
-	.text {     /*	TO MA SIE ZACZYNAC NA SRODKU EKRANU	*/
-		margin-left: -20px;
-		margin-top: 20vh;
-		width: 50%;
+	.text {
+		position: absolute;
+		top: 8vw;
+		left: 50vw;
+		width: 37vw;
 		
 		.top {
 			display: flex;
@@ -390,9 +396,13 @@ nav {
 		margin-left: 2.5vw;
 	}
 }
+.slider-join-now {
+	margin-top: 120px;
+}
 /* #slider end */
 
 .short {
+	max-width: 2000px;
 	padding-top: 110px;
 	padding-bottom: 90px;
 	padding-left: 12vw;
@@ -561,6 +571,9 @@ nav {
 		text-transform: none;
 		align-self: flex-start;
 	}
+}
+.joinnow-prices {
+	margin-top: 250px;
 }
 /* prices end */
 
@@ -773,6 +786,29 @@ footer {
 	right: -5px;
 	width: 54%;
 }
+.subsection-person-muaythai {
+	top: 20px;
+}
+.subsection-person-wingchun {
+	width: 32%;
+	top: 20px;
+	right: 12%;
+}
+.subsection-person-kids {
+	top: -2vw;
+	width: 70%;
+	right: -10%;
+}
+.subsection-person-judo {
+	top: 8vw;
+	width: 65%;
+	right: -10%;
+}
+.subsection-person-hit {
+	width: 36%;
+	top: 20px;
+	right: 10%;
+}
 .about-person {
 	width: 40%;
 	right: 9%;
@@ -813,8 +849,13 @@ footer {
 		text-align: justify;
 	}
 }
-.sub-section-first {
-	padding-top: 44vh;
+.joinnow-top {
+	h1 {
+		font-style: normal;
+	}
+	a:nth-of-type(2) {
+		margin-left: 3vw;
+	}
 }
 /* subpage top end */
 
@@ -822,30 +863,37 @@ footer {
 	transform: rotateY(180deg);
 }
 
-.right {
+.block {
 	display: flex;
 	align-items: center;
 	position: relative;
 	
-	padding-left: 5%;
-	padding-right: 5%;
-	
 	.person {
-		width: 45%;
+		width: 45vw;
+	}
+	.person-left {
+		margin-left: 5vw;
+	}
+	.person-right {
+		margin-left: 47vw;
 	}
 	.figures {
 		position: absolute;
-		bottom: 24%;
-		left: 11%;
-		width: 26%;
+		top: 27vw;
+		left: 12%;
+		width: 28%;
 	}
 	.text {
-		width: 50%;
-		padding-left: 5%;
-		padding-right: 2%;
+		position: absolute;
+		top: 0;
+		width: 40vw;
 		text-align: justify;
-		
-		margin-top: -120px;
+	}
+	.text-right {
+		left: 50vw;
+	}
+	.text-left {
+		left: 10vw;
 	}
 	h2 {
 		color: $red;
@@ -857,49 +905,137 @@ footer {
 		padding-top: 30px;
 		padding-bottom: 42px;
 	}
-	.button-white {
+	a:nth-of-type(2) {
 		margin-left: 3vw;
 	}
 }
-
-.left-side {
-	position: relative;
-	margin-top: -370px;
+.single-first {
+	padding-top: 22vw;
+	padding-bottom: 0;
 	
-	.person {
-		margin-top: 220px;
-		margin-left: -40px;
-		width: 47%;
+	.text {
+		top: 37vw;
+	}
+}
+.single-2 {
+	margin-top: -8vw;
+	
+	.text {
+		top: 18vw;
 	}
 	.figures {
-		position: absolute;
-		bottom: 33.5%;
-		left: 55.5%;
-		width: 30%;
+		top: 18vw;
+		left: 56%;
+		width: 32%;
+	}
+}
+.joinnow-1 {
+	margin-top: 6vw;
+	
+	.person-left {
+		margin-left: 12vw;
 	}
 	.text {
-		width: 50%;
-		padding-left: 7%;
-		padding-right: 0%;
-		margin-top: 0px;
+		top: 10vw;
+	}
+	.figures {
+		top: 2vw;
+	}
+}
+.joinnow-2 {
+	margin-top: 5vw;
+	
+	.text {
+		top: 2vw;
+	}
+	.person {
+		width: 57.5vw;
+	}
+	.person-right {
+		margin-left: 48vw;
+	}
+}
+.about-1 {
+	margin-bottom: 120px;
+	
+	.text {
+		position: relative;
+		margin-top: 16vw;
 	}
 }
 .about-2 {
-	margin-top: 420px;
+	margin-bottom: 140px;
 	
-	.person {
-		margin-top: -200px;
-		width: 50%;
+	.person-left {
+		margin-left: 7vw;
 	}
 	.text {
-		padding-left: 0;
-		//margin-left: -20px;
+		top: 28vw;
 	}
 }
+.muaythai-2 {
+	.text {
+		margin-top: 7vw;
+	}
+}
+.wingchun-1 {
+	.person-left {
+		width: 25%;
+		margin-left: 14vw;
+	}
+}
+.wingchun-2 {
+	.person-right {
+		width: 25%;
+		margin-left: 60vw;
+	}
+}
+.kids-1 {
+	padding-top: 12vw;
+	
+	.text {
+		top: 30vw;
+	}
+}
+.kids-2 {
+	.person-right {
+		width: 25%;
+		margin-left: 60vw;
+	}
+}
+.judo-1 {
+	padding-top: 35vw;
+	
+	.person-left {
+		width: 48%;
+	}
+	figures {
+		top: 37vw;
+	}
+}
+.judo-2 {
+	padding-top: 12vw;
+}
+.hit-1 {
+	padding-top: 5vw;
+	
+	.person-left {
+		width: 27%;
+		margin-left: 10vw;
+	}
+}
+.hit-2 {
+	padding-top: 12vw;
+	
+	.person-right {
+		width: 53%;
+	}
+}
+
 /* subpage end */
 
 #testimonials {
-	padding-top: 120px;
+	padding-top: 0;
 	padding-left: 12vw;
 	padding-right: 12vw;
 	padding-bottom: 100px;
@@ -939,12 +1075,23 @@ footer {
 		background-color: $white;
 		@include box-shadow-black;
 		padding: 0;
+		cursor: pointer;
 	}
 	.box img {
 		height: 310px;
 		width: 100%;
 		object-fit: cover;
 		object-position: top;
+	}
+	.play {
+		position: absolute;
+		left: 0; 
+  		right: 0; 
+		top: 0;
+		bottom: calc(50% - 16px);
+  		margin: auto; 
+		width: 32px !important;
+		height: auto!important;
 	}
 	.text {
 		padding: 50px 40px 80px 40px;
@@ -1001,6 +1148,106 @@ footer {
 	}
 }
 /* download end */
+
+.joinnow-top {
+	
+	.form {
+		top: 17vh;
+    	right: 12vw;
+		left: auto;
+	}
+}
+
+#service-boxes {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	padding-right: 6vw;
+	padding-left: 6vw;
+	margin-top: 180px;
+	margin-bottom: 120px;
+	
+	a {
+		width: calc(100% / 3 - 60px);
+		height: 100%;
+		margin: 10px;
+	}
+	img {
+		width: 100%;
+	}
+}
+/* #service-boxes end */
+
+.meet {
+	padding-left: 12vw;
+	padding-right: 12vw;
+	padding-top: 100px;
+	
+	.meet-bg {
+		width: 100%;
+		position: absolute;
+		bottom: 2px;
+		left: 0;
+		height: 47%;
+		z-index: -1;
+	}
+	h2 {
+		color: $red;
+		font-size: 60px;
+		font-weight: bold;
+		text-transform: none;
+		align-self: flex-start;
+		padding-bottom: 30px;
+	}
+	p {
+		font-size: $text;
+		width: 85%;
+	}
+	img {
+		width: 100%;
+	}
+	.trainer {
+		position: absolute;
+		bottom: 12%;
+		
+		display: flex;
+		flex-direction: column;
+		font-weight: bold;
+		
+		span:nth-of-type(1) {
+			text-transform: uppercase;
+			font-size: 65px;
+			color: $white;
+			padding-bottom: 15px;
+		}
+		span:nth-of-type(2) {
+			font-size: 30px;
+			color: $white;
+		}
+	}
+	.trainer-1 {
+		left: 16%;
+	}
+	.trainer-2 {
+		left: 38%;
+	}
+	.trainer-3 {
+		left: 61%;
+	}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 @media screen and (max-width: 1680px) {
 	$from_age: 30px;
