@@ -13,6 +13,7 @@
     <link rel='shortcut icon' type='image/png' href='img/favicon.png'/>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	<script src="scripts/rellax.min.js"></script>
     <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBzfiowBxGBfsSCu2slg1qLXUxLE-e3d_Q"></script>
     <script type="text/javascript" src="scripts/markerwithlabel.js"></script>
     
@@ -24,7 +25,7 @@
 
 <body>
 	
-    <nav class="no-color">
+    <nav>
         
         <a class="logo" href="#" title="Homepage"><img src="img/logo.png"></a>
         
@@ -38,6 +39,7 @@
             <a href="schedule.html"><li>Schedule</li></a>
             <a href="about.html"><li>About</li></a>
             <a href="join-now.html"><li>Join now</li></a>
+			<a class="facebook" href="#"><li><img src="img/facebook_white.svg"></li></a>
         </ul>
         
     </nav>
@@ -53,7 +55,7 @@
 			<h1>Wing Chun</h1>
 			<p>MMA or Mixed Martial Arts is the fusion of many existing martial arts into one combative style.<br>It is also many thousands of years old with its first inception into the Ancient Greek Olympics in the 648 BC. Utilizing various codes of wrestling, Brazilian Jujitsu, Judo, Karate, Boxing, Muay Thai, Tae Kwondo as it primary though not exclusive martial arts sources MMA is the most modern up to date from of weaponless self defense and the worlds most popular combat sport.</p>
 			
-			<a href="#">
+			<a href="about.html#schedule">
 				<button class="button-white">Our schedule</button>
 			</a>
 			
@@ -62,7 +64,7 @@
 		<section class="block single-first wingchun-1">
 		
 			<img class="person person-left" src="img/wingchun1.png">
-			<img class="figures figures-left" src="img/figures_red2.png">
+			<!--<img class="figures figures-left figures-rellax rellax" data-rellax-speed="-2" src="img/figures_red2.png">-->
 			
 			<div class="text text-right">
 				<h2>About service 1</h2>
@@ -71,7 +73,7 @@
 				<a href="join-now.html">
 					<button>Join now</button>
 				</a>
-				<a href="#">
+				<a href="about.html#schedule">
 					<button class="button-white">Our schedule</button>
 				</a>
 			</div>
@@ -88,13 +90,13 @@
 				<a href="join-now.html">
 					<button>Join now</button>
 				</a>
-				<a href="#">
+				<a href="about.html#schedule">
 					<button class="button-white">Our schedule</button>
 				</a>
 			</div>
 			
 			<img class="person person-right" src="img/wingchun2.png">
-			<img class="figures figures-right" src="img/figures_red.png">
+			<!--<img class="figures figures-right figures-rellax rellax" data-rellax-speed="-2" src="img/figures_red.png">-->
 		
 		</section>
 		
@@ -108,7 +110,7 @@
 				<span>and they are happy</span>
 			</div>
 			
-			<a href="#">
+			<a href="about.html#testimonials">
 				<button>See testimonials</button>
 			</a>
 		
@@ -138,7 +140,7 @@
 				<span>from age 5 onwards</span>
 			</div>
 			
-			<a href="#">
+			<a href="index.html#pricing">
 				<button>Check our pricing</button>
 			</a>
 		
@@ -195,6 +197,21 @@
         </footer>
     
     </main>
+	
+	<script>
+		
+		if ((window.innerHeight > window.innerWidth) || (window.innerWidth < 801)) {
+			$('nav ul').hide();
+		}
+		
+		$('.menu-mobile').click(function() {
+			$('nav ul').fadeIn();
+		});
+		$('.menu-close').click(function() {
+			$('nav ul').fadeOut();
+		});
+		
+	</script>
     
 	<!--<script src="scripts/imagesloaded.pkgd.min.js"></script>
 	<script src="scripts/three.min.js"></script>

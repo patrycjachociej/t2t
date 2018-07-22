@@ -13,67 +13,73 @@
     <link rel='shortcut icon' type='image/png' href='img/favicon.png'/>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	<script src="scripts/rellax.min.js"></script>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css">
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
     <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBzfiowBxGBfsSCu2slg1qLXUxLE-e3d_Q"></script>
+	<!--<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBi4h9g86UvyfHq6Zxwh8WIRGtUmMEZM0g&callback=initMap" type="text/javascript"></script>-->
     <script type="text/javascript" src="scripts/markerwithlabel.js"></script>
-    
+
   <!--[if lt IE 9]>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.js"></script>
   <![endif]-->
-    
+
 </head>
 
 <body>
-  
+
     <nav>
-        
+
         <a class="logo" href="#" title="Homepage"><img src="img/logo.png"></a>
-        
-        <img class="menu-mobile" src="img/menu.svg">
-        
-        <ul class="menu">
-			<img class="menu-close" src="img/close-button.svg">
+
+        <img class="menu-mobile" title="Open menu" src="img/menu.svg">
+
+        <ul class="menu menu-index">
+			<img class="menu-close" title="Close menu" src="img/close_button.svg">
             <a href="services.html"><li>Services</li></a>
-            <a href="pricing.html"><li>Pricing</li></a>
+            <a class="menu-pricing"><li>Pricing</li></a>
             <a href="kids-classes.html"><li>Kids classes</li></a>
-            <a href="schedule.html"><li>Schedule</li></a>
+            <a href="about.html#schedule"><li>Schedule</li></a>
             <a href="about.html"><li>About</li></a>
             <a href="join-now.html"><li>Join now</li></a>
+			<a class="facebook" href="#"><li><img src="img/facebook_white.svg"></li></a>
         </ul>
-        
+
     </nav>
-    
+
     <main>
-    
+
         <section id="video-section">
-			
+
 			<video id="video" autoplay="" loop="">
               <!--<source src="img/2560x2080.webm" type="video/webm" media="all and (min-width: 1921px)">-->
               <source src="img/1920x1080.webm" type="video/webm" media="all and (max-width: 1920px)">
 				Your browser does not support HTML5 video.
             </video>
-            
+
         </section>
-		
+
 		<p class="watch">
 			Watch our video
 			<img src="img/play.svg">
 		</p>
-		
+
 		<section id="special-offer">
-		
+
 			<div>
 				<p>Special offer</p>
 				<p>for families</p>
 			</div>
-			
+
 			<a href="join-now.html">
 				<button>Join now</button>
 			</a>
-		
+
 		</section>
-		
+
 		<section class="slider">
-			
+
 			<div class="leaves">
 				<div class="leave l1 active">01</div>
 				<div class="leave l2">02</div>
@@ -81,8 +87,10 @@
 				<div class="leave l4">04</div>
 				<div class="leave l5">05</div>
 			</div>
-		
+
 			<div class="image">
+                <!--<img class="figures figures-rellax rellax" data-rellax-speed="-2" src="img/figures_red2.png">
+                <img class="figures2 figures-rellax rellax" data-rellax-speed="2" src="img/figures_red.png">-->
 				<img class="i1" src="img/beginner.png" alt="Begginer classes">
 				<img class="i2" src="img/ladies.png" alt="Ladies classes">
 				<img class="i3" src="img/junior.png" alt="Junior classes">
@@ -102,12 +110,12 @@
 						<div class="a-way2">A way to start</div>
 						<div class="a-way3">From age 5 onwards</div>
 						<div class="a-way4">Be a true champion</div>
-						<div class="a-way5">A way to start</div>
+						<div class="a-way5">High Intensity Training</div>
 						<span class="h1">Beginner<br>classes</span>
 						<span class="h2">Ladies<br>classes</span>
 						<span class="h3">Junior<br>classes</span>
 						<span class="h4">Professionals<br>classes</span>
-						<span class="h5">High Intensive Training HIIT<br>classes</span>
+						<span class="h5 mma">HIT</span>
 					</div>
 				</div>
 				<p class="p1">
@@ -125,40 +133,41 @@
 				<p class="p5">
 					5 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam vitae vehicula ipsum. Pellentesque at metus sit amet massa fringilla gravida. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Quisque maximus, diam sodales blandit dictum, nisl justo posuere odio, ac accumsan justo mi in quam. Morbi molestie, quam sit amet bibendum venenatis, nulla leo aliquam diam, ac rhoncus nulla lacus vel tortor. Duis eu enim id sem scelerisque feugiat. Nunc tincidunt lectus a nulla pulvinar, in scelerisque enim varius. Praesent ac lectus a turpis pharetra pharetra et at purus. Sed et nisi vel magna iaculis bibendum blandit ornare dolor.<br><br>Etiam et nisl nibh. Curabitur felis elit, elementum non lacus vitae, suscipit interdum erat. Cras vestibulum odio a dignissim auctor. Aenean rutrum, elit nec congue imperdiet, mi elit sollicitudin mauris, quis ornare nisi velit non urna. Nulla sed tincidunt neque.
 				</p>
-				
+
 				<a href="#">
-					<button>Read more</button>
+					<button class="b1">Read more</button>
 				</a>
-				<a href="#">
-					<button class="button-white">Our schedule</button>
+				<a href="about.html#schedule">
+					<button class="button-white b2">Our schedule</button>
 				</a>
 			</div>
-		
+
 		</section>
-		
+
 		<section class="short short-smallbottom">
-		
+
 			<div class="left">
 				We are welcoming to all, from beginner to advanced
 				<span>From age 5 onwards</span>
 			</div>
-			
-			<a href="#">
-				<button>Check our pricing</button>
+
+			<a href="#pricing">
+				<button class="btn-pricing">Check our pricing</button>
 			</a>
-		
+
 		</section>
-		
+
 		<section id="about">
-		
-			<img src="img/judo.png" alt="Judo">
-			
+
+			<img class="only-desktop" src="img/judo.png" alt="Judo">
+			<img class="only-mobile" src="img/judo_mobile.png" alt="Judo">
+
 			<div class="text">
 				<h2 class="section-header">
 					About us
 				</h2>
 				<p class="section-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam vitae vehicula ipsum. Pellentesque at metus sit amet massa fringilla gravida. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Quisque maximus, diam sodales blandit dictum, nisl justo posuere odio, ac accumsan justo mi in quam. Morbi molestie, quam sit amet bibendum venenatis, nulla leo aliquam diam, ac rhoncus nulla lacus vel tortor. Duis eu enim id sem scelerisque feugiat. Nunc tincidunt lectus a nulla pulvinar, in scelerisque enim varius. Praesent ac lectus a turpis pharetra pharetra et at purus. Sed et nisi vel magna iaculis bibendum blandit ornare dolor.<br><br>Etiam et nisl nibh. Curabitur felis elit, elementum non lacus vitae, suscipit interdum erat. Cras vestibulum odio a dignissim auctor. Aenean rutrum, elit nec congue imperdiet, mi elit sollicitudin mauris, quis ornare nisi velit non urna.</p>
-				
+
 				<a href="#">
 					<button>Read more</button>
 				</a>
@@ -166,11 +175,11 @@
 					<button class="button-white">Testimonials</button>
 				</a>
 			</div>
-			
+
 		</section>
-		
-		<section class="prices">
-			
+
+		<section class="prices prices-rellax" id="pricing" data-rellax-speed="3">
+
 			<div class="price">
 				<span class="number">180</span>
 				<span class="for">For 10 lesson block<br><span>fill</span></span>
@@ -184,7 +193,7 @@
 				<div class="label">
 					best offer
 				</div>
-				
+
 				<span class="number">120</span>
 				<span class="for">Monthly for adults<br>Paid in cash*</span>
 				<span class="red">Save 20$</span>
@@ -203,16 +212,16 @@
 					<button>Join now</button>
 				</a>
 			</div>
-		
+
 		</section>
-		
+
 		<section id="gallery">
-			
+
 			<h2>Gallery</h2>
-		
+
 			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam vitae vehicula ipsum. Pellentesque at metus sit amet massa fringilla gravida.</p>
-			
-			<div class="photos">
+
+			<div class="photos only-desktop">
 				<img src="img/gallery1.jpg">
 				<img src="img/gallery9.jpg">
 				<img src="img/gallery3.jpg">
@@ -224,32 +233,102 @@
 				<img src="img/gallery9.jpg">
 				<img src="img/gallery10.jpg">
 			</div>
-		
+			
+			<div class="owl-carousel only-mobile">
+				<img src="img/gallery1.jpg">
+				<img src="img/gallery9.jpg">
+				<img src="img/gallery3.jpg">
+				<img src="img/gallery4.jpg">
+				<img src="img/gallery1.jpg">
+				<img src="img/gallery6.jpg">
+				<img src="img/gallery7.jpg">
+				<img src="img/gallery8.jpg">
+				<img src="img/gallery9.jpg">
+				<img src="img/gallery10.jpg">
+			</div>
+			
+			<script>
+				
+			$(window).on('resize', function(){
+				var win = $(this);
+				if ((window.innerHeight > window.innerWidth) || (window.innerWidth < 1031)) {
+					$(document).ready(function() {
+						$('nav ul').hide();
+						
+						$(".owl-carousel").owlCarousel({
+							loop:true,
+							margin:15,
+							autoplay:true,
+							autoplayTimeout:3000,
+							responsive:{
+								0:{
+									items:1
+								},
+								600:{
+									items:2
+								},
+								1000:{
+									items:3
+								}
+							}
+						});
+					});
+				}
+			});
+				
+			if ((window.innerHeight > window.innerWidth) || (window.innerWidth < 1031)) {
+				$(document).ready(function() {
+					$('nav ul').hide();
+					
+					
+					$(".owl-carousel").owlCarousel({
+						loop:true,
+						margin:15,
+						autoplay:true,
+						stagePadding: 50,
+						autoplayHoverPause:true,
+						autoplayTimeout:3000,
+						responsive:{
+							0:{
+								items:1
+							},
+							600:{
+								items:2
+							},
+							1000:{
+								items:3
+							}
+						}
+					});
+				});
+			}
+			</script>
+
 		</section>
-		
+
 		<section class="short">
-		
+
 			<div class="left">
 				We have trained 343 champions through the years
 				<span>and they are happy</span>
 			</div>
-			
-			<a href="#">
+
+			<a href="about.html#testimonials">
 				<button>See testimonials</button>
 			</a>
-		
+
 		</section>
-		
+
 		<section id="contact">
-			
+
 			<div id="map"></div>
-			
+
 			<div class="form">
-			
+
 				<h3>Contact us!</h3>
-				
+
 				<form name="contact-form" method="post" action="send_form_email.php" onsubmit="return validateForm()">
-                
+
 					<div class="form-2-inputs">
 						<input id="name" class="input-text" type="text" name="fname" placeholder="First Name">
 
@@ -261,36 +340,44 @@
 					<textarea id="message" class="input-text-message" name="ftextmessage" type="text" rows="9" placeholder="Your Message"></textarea>
 
 					<button type="submit">Send your message</button>
-					
+
 					<div class="message-sent">
-					<?php 
+					<?php
 					if ((isset($_SESSION["message_sent"])) && ($_SESSION["message_sent"] == "success"))
 					{
 						?>
 						Message sent!
 						<?php
-						unset($_SESSION['message_sent']); 
+						unset($_SESSION['message_sent']);
 					}
 					?>
 					</div>
 				</form>
 
 			</div>
-			
+
 		</section>
-        
+
         <footer>
             <span>2018 &copy; T2T</span>
             <span>
-				Project: 
+				Project:
 				<a href="https://www.facebook.com/MichalIlenda/">Michał Iłenda</a>
-				Implementation: 
+				Implementation:
 				<a href="https://www.facebook.com/pchociej/">Patrycja Chociej</a>
 			</span>
         </footer>
-    
+
     </main>
-    
+	
+	<script>
+	if ((window.innerHeight < window.innerWidth) || (window.innerWidth > 800)) {
+		var rellax = new Rellax('.prices-rellax');
+	}
+		
+	
+	</script>
+
 	<!--<script src="scripts/imagesloaded.pkgd.min.js"></script>
 	<script src="scripts/three.min.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.20.3/TweenMax.min.js"></script>

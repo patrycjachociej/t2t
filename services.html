@@ -13,9 +13,10 @@
     <link rel='shortcut icon' type='image/png' href='img/favicon.png'/>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBzfiowBxGBfsSCu2slg1qLXUxLE-e3d_Q"></script>
+	<script src="scripts/rellax.min.js"></script>
+	<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBzfiowBxGBfsSCu2slg1qLXUxLE-e3d_Q"></script>
     <script type="text/javascript" src="scripts/markerwithlabel.js"></script>
-    
+	
   <!--[if lt IE 9]>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.js"></script>
   <![endif]-->
@@ -24,20 +25,21 @@
 
 <body>
   
-    <nav class="no-color">
+    <nav>
         
         <a class="logo" href="#" title="Homepage"><img src="img/logo.png"></a>
         
         <img class="menu-mobile" src="img/menu.svg">
         
-        <ul class="menu">
-			<img class="menu-close" src="img/close-button.svg">
+        <ul class="menu menu-services">
+			<img class="menu-close" title="Close menu" src="img/close_button.svg">
             <a href="services.html"><li>Services</li></a>
-            <a href="pricing.html"><li>Pricing</li></a>
+            <a href="index.html#pricing" class="menu-pricing"><li>Pricing</li></a>
             <a href="kids-classes.html"><li>Kids classes</li></a>
-            <a href="schedule.html"><li>Schedule</li></a>
+            <a href="about.html#schedule"><li>Schedule</li></a>
             <a href="about.html"><li>About</li></a>
             <a href="join-now.html"><li>Join now</li></a>
+			<a class="facebook" href="#"><li><img src="img/facebook_white.svg"></li></a>
         </ul>
         
     </nav>
@@ -45,22 +47,22 @@
     <main>
     
 		<section id="service-boxes">
-			<a href="kids-classes.html">
+			<a href="kids-classes.html" title="Kids classes">
 				<img src="img/kidsclasses1.png" alt="Kids classes">
 			</a>
-			<a href="mma-classes.html">
+			<a href="mma-classes.html" title="MMA classes">
 				<img src="img/mma2.png" alt="MMA classes">
 			</a>
-			<a href="hit_classes.html">
+			<a href="hit-classes.html" title="HIT classes">
 				<img src="img/hit3.png" alt="HIT classes">
 			</a>
-			<a href="judo_classes.html">
+			<a href="judo-classes.html" title="Judo classes">
 				<img src="img/judo4.png" alt="Judo classes">
 			</a>
-			<a href="muay-thai-classes.html">
+			<a href="muay-thai-classes.html" title="Muay Thai classes">
 				<img src="img/muay_thai5.png" alt="Muay Thai classes">
 			</a>
-			<a href="wing-chun-classes.html">
+			<a href="wing-chun-classes.html" title="Wing Chun classes">
 				<img src="img/wingchun6.png" alt="Wing Chun classes">
 			</a>
 		</section>
@@ -95,12 +97,12 @@
 						<div class="a-way2">A way to start</div>
 						<div class="a-way3">From age 5 onwards</div>
 						<div class="a-way4">Be a true champion</div>
-						<div class="a-way5">A way to start</div>
+						<div class="a-way5">High Intensity Training</div>
 						<span class="h1">Beginner<br>classes</span>
 						<span class="h2">Ladies<br>classes</span>
 						<span class="h3">Junior<br>classes</span>
 						<span class="h4">Professionals<br>classes</span>
-						<span class="h5">High Intensive Training HIIT<br>classes</span>
+						<span class="h5 mma">HIT</span>
 					</div>
 				</div>
 				<p class="p1">
@@ -125,10 +127,10 @@
 				</p>
 				
 				<a href="#">
-					<button>Read more</button>
+					<button class="b1">Read more</button>
 				</a>
-				<a href="#">
-					<button class="button-white">Our schedule</button>
+				<a href="about.html#schedule">
+					<button class="button-white b2">Our schedule</button>
 				</a>
 			</div>
 		
@@ -141,102 +143,12 @@
 				<span>From age 5 onwards</span>
 			</div>
 			
-			<a href="#">
+			<a href="index.html#pricing">
 				<button>Check our pricing</button>
 			</a>
 		
 		</section>
 		
-		<section id="about">
-		
-			<img src="img/judo.png" alt="Judo">
-			
-			<div class="text">
-				<h2 class="section-header">
-					About us
-				</h2>
-				<p class="section-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam vitae vehicula ipsum. Pellentesque at metus sit amet massa fringilla gravida. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Quisque maximus, diam sodales blandit dictum, nisl justo posuere odio, ac accumsan justo mi in quam. Morbi molestie, quam sit amet bibendum venenatis, nulla leo aliquam diam, ac rhoncus nulla lacus vel tortor. Duis eu enim id sem scelerisque feugiat. Nunc tincidunt lectus a nulla pulvinar, in scelerisque enim varius. Praesent ac lectus a turpis pharetra pharetra et at purus. Sed et nisi vel magna iaculis bibendum blandit ornare dolor.<br><br>Etiam et nisl nibh. Curabitur felis elit, elementum non lacus vitae, suscipit interdum erat. Cras vestibulum odio a dignissim auctor. Aenean rutrum, elit nec congue imperdiet, mi elit sollicitudin mauris, quis ornare nisi velit non urna.</p>
-				
-				<a href="#">
-					<button>Read more</button>
-				</a>
-				<a href="#">
-					<button class="button-white">Testimonials</button>
-				</a>
-			</div>
-			
-		</section>
-		
-		<section class="prices">
-			
-			<div class="price">
-				<span class="number">180</span>
-				<span class="for">For 10 lesson block<br><span>fill</span></span>
-				<span class="red">Use anytime</span>
-				<span class="more">Within 6 months from purchase.</span>
-				<a href="#">
-					<button>Join now</button>
-				</a>
-			</div>
-			<div class="price">
-				<div class="label">
-					best offer
-				</div>
-				
-				<span class="number">120</span>
-				<span class="for">Monthly for adults<br>Paid in cash*</span>
-				<span class="red">Save 20$</span>
-				<span class="more">By paying via direct debit you'll pay only $100/month.</span>
-				<a href="#">
-					<button>Join now</button>
-				</a>
-				<span class="star">* First 3 month fee to be paid within 3 weeks.<br>Only for cash payment</span>
-			</div>
-			<div class="price">
-				<span class="number">80</span>
-				<span class="for">Monthly for kids<br><span>fill</span></span>
-				<span class="red">Family offer</span>
-				<span class="more">Lorem ipsum Within 6 months from.</span>
-				<a href="#">
-					<button>Join now</button>
-				</a>
-			</div>
-		
-		</section>
-		
-		<section id="gallery">
-			
-			<h2>Gallery</h2>
-		
-			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam vitae vehicula ipsum. Pellentesque at metus sit amet massa fringilla gravida.</p>
-			
-			<div class="photos">
-				<img src="img/gallery1.jpg">
-				<img src="img/gallery9.jpg">
-				<img src="img/gallery3.jpg">
-				<img src="img/gallery4.jpg">
-				<img src="img/gallery1.jpg">
-				<img src="img/gallery6.jpg">
-				<img src="img/gallery7.jpg">
-				<img src="img/gallery8.jpg">
-				<img src="img/gallery9.jpg">
-				<img src="img/gallery10.jpg">
-			</div>
-		
-		</section>
-		
-		<section class="short">
-		
-			<div class="left">
-				We have trained 343 champions through the years
-				<span>and they are happy</span>
-			</div>
-			
-			<a href="#">
-				<button>See testimonials</button>
-			</a>
-		
-		</section>
 		
 		<section id="contact">
 			
@@ -288,6 +200,17 @@
         </footer>
     
     </main>
+	
+	<script>
+		
+		if ((window.innerHeight > window.innerWidth) || (window.innerWidth < 801)) {
+			$('nav ul').hide();
+		}
+		
+	</script>
+	
+    <!--<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBzfiowBxGBfsSCu2slg1qLXUxLE-e3d_Q"></script>
+    <script type="text/javascript" src="scripts/markerwithlabel.js"></script>-->
     
 	<!--<script src="scripts/imagesloaded.pkgd.min.js"></script>
 	<script src="scripts/three.min.js"></script>

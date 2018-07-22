@@ -13,8 +13,10 @@
     <link rel='shortcut icon' type='image/png' href='img/favicon.png'/>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBzfiowBxGBfsSCu2slg1qLXUxLE-e3d_Q"></script>
-    <script type="text/javascript" src="scripts/markerwithlabel.js"></script>
+	<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBzfiowBxGBfsSCu2slg1qLXUxLE-e3d_Q"></script>
+	
+    <!--<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBzfiowBxGBfsSCu2slg1qLXUxLE-e3d_Q"></script>
+    <script type="text/javascript" src="scripts/markerwithlabel.js"></script>-->
     
   <!--[if lt IE 9]>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.js"></script>
@@ -24,20 +26,21 @@
 
 <body>
 	
-    <nav class="no-color">
+    <nav>
         
         <a class="logo" href="#" title="Homepage"><img src="img/logo.png"></a>
         
         <img class="menu-mobile" src="img/menu.svg">
         
-        <ul class="menu">
-			<img class="menu-close" src="img/close-button.svg">
+        <ul class="menu menu-about">
+			<img class="menu-close" title="Close menu" src="img/close_button.svg">
             <a href="services.html"><li>Services</li></a>
-            <a href="pricing.html"><li>Pricing</li></a>
+            <a class="menu-pricing"><li>Pricing</li></a>
             <a href="kids-classes.html"><li>Kids classes</li></a>
-            <a href="schedule.html"><li>Schedule</li></a>
+            <a class="menu-schedule"><li>Schedule</li></a>
             <a href="about.html"><li>About</li></a>
             <a href="join-now.html"><li>Join now</li></a>
+			<a class="facebook" href="#"><li><img src="img/facebook_white.svg"></li></a>
         </ul>
         
     </nav>
@@ -53,8 +56,8 @@
 			<h1>About us</h1>
 			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. In ac ex at augue accumsan consequat. Nam eu sapien eu felis tempor pharetra. Fusce eros lorem, semper efficitur turpis at, ullamcorper aliquet felis..<br><br>Curabitur cursus urna nec tempus pellentesque. Morbi condimentum risus sit amet erat accumsan, nec porta ante luctus. Suspendisse mollis laoreet odio. Sed eget metus ut diam scelerisque mollis. Aenean pharetra dolor id justo tincidunt, at ullamcorper nisl tincidunt. Integer viverra tortor felis, eu dignissim neque vehicula in. Praesent pellentesque, ex id aliquet sodales, turpis lectus scelerisque sem, id cursus arcu sem quis elit. Vestibulum vitae hendrerit dolor.</p>
 			
-			<a href="#">
-				<button class="button-white">Our schedule</button>
+			<a href="#schedule">
+				<button class="button-white btn-schedule">Our schedule</button>
 			</a>
 			
 		</section>
@@ -69,8 +72,8 @@
 				<a href="join-now.html">
 					<button>Join now</button>
 				</a>
-				<a href="#">
-					<button class="button-white">See testimonials</button>
+				<a href="#testimonials">
+					<button class="button-white btn-testimonials">See testimonials</button>
 				</a>
 			</div>
 			
@@ -87,8 +90,8 @@
 				<a href="join-now.html">
 					<button>Join now</button>
 				</a>
-				<a href="#">
-					<button class="button-white">Our schedule</button>
+				<a href="#schedule">
+					<button class="button-white btn-schedule">Our schedule</button>
 				</a>
 			</div>
 		
@@ -133,7 +136,7 @@
 		
 		</section>
 		
-		<section class="about-prices">
+		<section class="about-prices" id="pricing">
 			
 			<h2>Our Pricing</h2>
 		
@@ -175,7 +178,7 @@
 		</section>
 		
 		
-		<section class="about-timetable">
+		<section class="about-timetable" id="schedule">
 			
 			<h2>Our Timetable</h2>
 			
@@ -247,6 +250,36 @@
         </footer>
     
     </main>
+	
+	<script>
+		$(".menu-about .menu-pricing").click(function() {
+			$('html, body').animate({
+				scrollTop: $(".about-prices").offset().top - 110
+			}, 300);
+		});
+		$(".menu-about .menu-schedule").click(function() {
+			$('html, body').animate({
+				scrollTop: $(".about-timetable").offset().top - 10
+			}, 300);
+		});
+		
+		
+		
+		if ((window.innerHeight > window.innerWidth) || (window.innerWidth < 801)) {
+			$('nav ul').hide();
+		}
+		$(".btn-schedule").click(function() {
+			$('html, body').animate({
+				scrollTop: $("#schedule").offset().top
+			}, 300);
+		});
+		$(".btn-testimonials").click(function() {
+			$('html, body').animate({
+				scrollTop: $("#testimonials").offset().top
+			}, 300);
+		});
+		
+	</script>
     
 	<!--<script src="scripts/imagesloaded.pkgd.min.js"></script>
 	<script src="scripts/three.min.js"></script>

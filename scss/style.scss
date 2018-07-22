@@ -87,6 +87,9 @@ $openSans: Open Sans, sans-serif;
 @mixin box-shadow-black {
 	box-shadow: 0 0 80px rgba(0, 0, 0, 0.28);
 }
+@mixin box-shadow-black-big {
+	box-shadow: 0 0 120px rgba(0, 0, 0, 0.38);
+}
 @mixin transition($what: all, $time: 0.2s, $how: ease-in-out) {
     -webkit-transition: $what $time $how;
     -moz-transition:    $what $time $how;
@@ -128,6 +131,12 @@ span {
 button {
 	@include button;
 }
+.only-mobile {
+	display: none;
+}
+.only-desktop {
+	display: block;
+}
 .button-white {
 	@include button-white;
 }
@@ -158,15 +167,18 @@ nav {
 	ul {
 		display: flex;
 		justify-content: flex-end;
+		position: relative;
+		padding-right: 70px;
 	}
 	li {
+		cursor: pointer;
 		list-style-type: none;
 		text-transform: uppercase;
 		font-weight: 700;
 		padding: 15px 1.55vw;
 		color: $white;
 	}
-	ul a:last-of-type {
+	ul a:nth-of-type(6) {
 		@include button;
 		margin-left: 1vw;
 		padding: 0 1.55vw;
@@ -174,7 +186,25 @@ nav {
 	a {
 		color: $white;
 	}
+	.facebook {
+		position: absolute;
+		right: 0;
+		top: -5px;
+		filter: brightness(1000%);
+		@include transition(filter);
+		
+		&:hover {
+			filter: brightness(100%);
+		}
+		img {
+			height: 30px;
+		}
+	}
+	ul > a.facebook > li {
+		padding-right: 0;
+	}
 }
+
 .no-color {
 	background-color: transparent;
 	margin-top: 20px;
@@ -286,7 +316,7 @@ nav {
 	display: flex;
 	position: relative;
 	overflow: hidden;
-	min-height: 100vh;
+	/*min-height: 100vh;*/
 	
 	
 	.leave {
@@ -348,10 +378,31 @@ nav {
 			top: calc(7vw + 510px);
 		}
 	}	
-	.i2, .i3, .i4, .i5, .n5, .n2, .n3, .n4, 
-	.h2, .h3, .h4, .h5, .p2, .p3, .p4, .p5,
-	.a-way2, .a-way3, .a-way4, .a-way5 {
+	.l6 {
+		top: calc(7vw + 600px);
+		
+		&:hover {
+			margin-right: 30px;
+			top: calc(7vw + 630px);
+		}
+	}	
+	.i2, .i3, .i4, .i5, .i6, .n5, .n2, .n3, .n4, .n6,
+	.h2, .h3, .h4, .h5, .h6, .p2, .p3, .p4, .p5, .p6,
+	.a-way2, .a-way3, .a-way4, .a-way5, .a-way6 {
 		display: none;
+	}
+	.figures {
+		position: absolute;
+		top: -5%;
+		left: 15%;
+		width: 18%;
+	}
+	.figures2 {
+		position: absolute;
+		top: 40%;
+		left: 25%;
+		width: 15%;
+		z-index: -1;
 	}
 	
 	img {
@@ -386,6 +437,11 @@ nav {
 				font-size: 55px;
 				font-weight: 700;
 			}
+			.mma {
+				font-size: 110px;
+				margin-left: -7px;
+				margin-bottom: -9px;
+			}
 		}
 		p {
 			font-weight: 500;
@@ -393,16 +449,20 @@ nav {
 		}
 	}
 	.button-white {
-		margin-left: 2.5vw;
+		margin-left: 3vw;
 	}
 }
 .slider-join-now {
 	margin-top: 120px;
+	
+	.figures {
+		top: -70vw;
+	}
 }
 /* #slider end */
 
 .short {
-	max-width: 2000px;
+	/*max-width: 2000px;*/
 	padding-top: 110px;
 	padding-bottom: 90px;
 	padding-left: 12vw;
@@ -488,7 +548,8 @@ nav {
 	display: flex;
 	justify-content: center;
 	line-height: 1.4;
-	margin-top: -130px;
+	margin-top: 500px;
+	margin-bottom: -700px;
 	
 	.price {
 		background-color: $white;
@@ -561,6 +622,7 @@ nav {
 	
 	.prices {
 		margin-top: 60px;
+		margin-bottom: 0;
 	}
 	
 	h2 {
@@ -879,7 +941,7 @@ footer {
 	}
 	.figures {
 		position: absolute;
-		top: 27vw;
+		top: 17vw;
 		left: 12%;
 		width: 28%;
 	}
@@ -924,7 +986,7 @@ footer {
 		top: 18vw;
 	}
 	.figures {
-		top: 18vw;
+		top: -8vw;
 		left: 56%;
 		width: 32%;
 	}
@@ -939,7 +1001,7 @@ footer {
 		top: 10vw;
 	}
 	.figures {
-		top: 2vw;
+		top: 20vw;
 	}
 }
 .joinnow-2 {
@@ -977,6 +1039,9 @@ footer {
 	.text {
 		margin-top: 7vw;
 	}
+	.figures {
+		top: -2vw;
+	}
 }
 .wingchun-1 {
 	.person-left {
@@ -989,12 +1054,18 @@ footer {
 		width: 25%;
 		margin-left: 60vw;
 	}
+	.figures {
+		top: -14vw;
+	}
 }
 .kids-1 {
 	padding-top: 12vw;
 	
 	.text {
 		top: 30vw;
+	}
+	.figures {
+		top: 8vw;
 	}
 }
 .kids-2 {
@@ -1009,7 +1080,7 @@ footer {
 	.person-left {
 		width: 48%;
 	}
-	figures {
+	.figures {
 		top: 37vw;
 	}
 }
@@ -1069,13 +1140,16 @@ footer {
 		width: 100%;
 		max-width: 440px;
 		position: relative;
-		margin: 0 35px;
 		text-align: center;
 		color: black;
 		background-color: $white;
 		@include box-shadow-black;
 		padding: 0;
 		cursor: pointer;
+		
+		&:nth-of-type(2) {
+			margin: 0 70px;
+		}
 	}
 	.box img {
 		height: 310px;
@@ -1145,15 +1219,16 @@ footer {
 	img {
 		height: 58px;
 		padding-left: 10px;
+		padding-top: 10px;
 	}
 }
 /* download end */
 
 .joinnow-top {
-	
 	.form {
 		top: 17vh;
     	right: 12vw;
+		max-width: 37vw;
 		left: auto;
 	}
 }
@@ -1174,6 +1249,10 @@ footer {
 	}
 	img {
 		width: 100%;
+		@include transition();
+		&:hover {
+			@include box-shadow-black-big;
+		}
 	}
 }
 /* #service-boxes end */
@@ -1249,11 +1328,40 @@ footer {
 
 
 
-@media screen and (max-width: 1680px) {
-	$from_age: 30px;
-	
-	#slider .text .right span {
-    	font-size: 50px;
+@media screen and (max-width: 1700px) {
+	/* homepage */
+	#special-offer {
+		margin-left: 10vw;
+    	margin-right: 10vw;
+		width: auto;
+	}
+	#special-offer a {
+		margin-right: 6%;
+	}
+	.section-header {
+		padding-bottom: 24px;
+	}
+	.section-header, #gallery h2, .form h3 {
+		font-size: 56px;
+	}
+	#gallery p {
+    	width: 45%;
+		margin-left: 27.5%;
+	}
+	.section-text {
+		padding-bottom: 48px;
+	}
+	.slider .text .number {
+		font-size: 160px;
+	}
+	.slider .text .right {
+		font-size: 26px;
+	}
+	.slider .text .right span {
+    	font-size: 48px;
+	}
+	.short-smallbottom {
+		padding-top: 20px;
 	}
 	.short {
 		padding-left: 10vw;
@@ -1262,8 +1370,1653 @@ footer {
 	.short div {
 		font-size: 26px;
 	}
+	.short div span {
+		font-size: 67px;
+	}
+	.short button {
+		font-size: 25px;
+		padding: 16px 65px;
+	}
+	.prices .price {
+		width: 20vw;
+	}
+	#contact .map-label {
+		width: 22vw;
+	}
+	
+	#testimonials .box {
+		margin: 0;
+	}
+	#testimonials .box:nth-of-type(2) {
+		margin: 0 50px;
+	}
+	
+	.subpage-top h1 {
+		font-size: 72px;
+	}
+	.subsection-bg {
+		height: 107vh;
+		clip-path: polygon(0 0, 100% 0%, 100% 100%, 0 75%);
+	}
+	.joinnow-prices {
+		margin-top: 150px;
+	}
+	.joinnow-top .form {
+		right: 6vw;
+		textarea {
+			height: 10em;
+		}
+	}
+	.subpage-top {
+    	height: 90vh;
+	}
+	.meet {
+		padding-top: 50px;
+	}
+	.meet .trainer span:nth-of-type(1) {
+		font-size: 50px;
+	}
+	.meet .trainer span:nth-of-type(2) {
+    	font-size: 24px;
+	}
+	.slider .text .right .mma {
+		font-size: 90px;
+    	margin-left: -6px;
+	}
+	
+	.prices {
+		margin-top: 450px;
+		margin-bottom: -590px;
+	}
+}
+@media screen and (max-width: 1500px) {
+	nav li {
+		padding: 15px 1.5vw;
+	}
+	nav ul {
+		padding-right: 60px;
+	}
+	nav .facebook img {
+		height: 26px;
+	}
+	#special-offer p:nth-of-type(1) {
+		font-size: 52px;
+	}
+	#special-offer p:nth-of-type(2) {
+		font-size: 68px;
+	}
+	#special-offer button {
+		font-size: 24px;
+		padding: 15px 80px;
+	}
+	.slider {
+    	padding-left: 16vw;
+	}
+	.slider img {
+    	width: 33vw;
+	}
+	.slider .text .number {
+		font-size: 140px;
+		padding-right: 18px;
+	}
+	.slider .text .right {
+		font-size: 22px;
+	}
+	.slider .text .right span {
+    	font-size: 44px;
+	}
+	.slider .text .top {
+		padding-bottom: 18px;
+	}
+	.slider .leave {
+		font-size: 36px;
+		padding: 12px 115px 12px 12px;
+	}
+	.slider .l1 {
+		&:hover {
+			margin-right: 20px;
+			top: calc(7vw + 20px);
+		}
+	}
+	.slider .l2 {
+		top: calc(7vw + 100px);
+		&:hover {
+			margin-right: 20px;
+			top: calc(7vw + 120px);
+		}
+	}	
+	.slider .l3 {
+		top: calc(7vw + 200px);
+		&:hover {
+			margin-right: 20px;
+			top: calc(7vw + 220px);
+		}
+	}
+	.slider .l4 {
+		top: calc(7vw + 300px);
+		&:hover {
+			margin-right: 20px;
+			top: calc(7vw + 320px);
+		}
+	}
+	.slider .l5 {
+		top: calc(7vw + 400px);
+		&:hover {
+			margin-right: 20px;
+			top: calc(7vw + 420px);
+		}
+	}
+	.slider .l6 {
+		top: calc(7vw + 500px);
+		&:hover {
+			margin-right: 20px;
+			top: calc(7vw + 520px);
+		}
+	}
+	.short {
+		padding-left: 8vw;
+    	padding-right: 8vw;
+		padding-top: 80px;
+    	padding-bottom: 80px;
+	}
+	.short div {
+		font-size: 23.5px;
+	}
+	.short div span {
+		font-size: 60px;
+	}
+	.short button {
+		font-size: 24px;
+		padding: 15px 56px;
+	}
+	.prices {
+		margin-top: 450px;
+		margin-bottom: -600px;
+	}
+	.prices .price {
+		width: 23vw;
+	}
+	#gallery p {
+		width: 50%;
+		margin-left: 25%;
+	}
+	.form {
+		top: 11vh;
+    	left: 8vw;
+	}
+	#contact .map-label {
+		width: 24vw;
+	}
+	.form h3 {
+		padding-bottom: 26px;
+    	padding-left: 26px;
+    	padding-right: 26px;
+	}
+	.block.single-2 > img.person.person-right.mirror, .single-2 .figures {
+		margin-top: 10vw;
+	}
+}
+@media screen and (max-width: 1400px) {
+	nav {
+		height: 90px;
+	}
+	nav li {
+		padding: 13px 1.45vw;
+		font-size: 15px;
+	}
+	nav ul {
+		padding-right: 50px;
+	}
+	nav .facebook img {
+		height: 24px;
+	}
+	p, .meet p {
+   		font-size: 17px;
+	}
+	.slider {
+    	padding-left: 14vw;
+	}
+	.short button {
+		font-size: 22px;
+		padding: 14px 52px;
+	}
+	.short div {
+		font-size: 22px;
+	}
+	.short div span {
+		font-size: 57px;
+	}
+	.prices .number {
+		font-size: 78px;
+	}
+	.prices .for {
+		font-size: 17px;
+	}
+	.prices .red {
+		font-size: 32px;
+	}
+	.prices .star {
+		width: 70%;
+	}
+	.form {
+		padding: 44px 28px;
+	}
+	.form h3 {
+		padding-bottom: 22px;
+		padding-left: 0px;
+		padding-right: 0px;
+	}
+	.form .form-2-inputs #lastname {
+		margin-left: 8px;
+	}
+	.form input, .form textarea {
+    	padding: 12px;
+    	font-size: 17px;
+	}
+	.section-header, #gallery h2, .form h3 {
+		font-size: 50px;
+	}
+	
+	.subsection-bg {
+    	height: 130vh;
+	}
+	#testimonials .box:nth-of-type(2) {
+		margin: 0 40px;
+	}
+	#testimonials .text {
+		padding: 40px 30px 70px 30px;
+	}
+	#testimonials h2, .subpage-top h1 {
+		font-size: 72px;
+	}
+	#testimonials p {
+		padding-bottom: 80px;
+    	width: 60%;
+	}
+	.about-prices h2, .about-timetable h2, .block h2, .meet h2 {
+		font-size: 56px;
+	}
+	
+	.meet .trainer span:nth-of-type(1) {
+		font-size: 43px;
+	}
+	.meet .trainer span:nth-of-type(2) {
+    	font-size: 22px;
+	}
+	.slider .text .right .mma {
+		font-size: 90px;
+    	margin-left: -6px;
+	}
+	.joinnow-prices {
+		margin-top: 130px;
+	}
+	.subpage-top {
+		height: 100vh;
+	}
+	.subsection-bg {
+		height: 115vh;
+	}
+	.joinnow-2 .person-right {
+    	margin-top: 80px;
+	}
+	.block .figures {
+    	width: 24%;
+	}
+	.single-first {
+    	padding-top: 18vw;
+	}
+	.single-first .text {
+		top: 29vw;
+	}
+	.prices {
+		margin-top: 510px;
+		margin-bottom: -630px;
+	}
+}
+@media screen and (max-width: 1300px) {
+	p, .meet p {
+		font-size: 16px;
+	}
+	.slider {
+    	padding-left: 12vw;
+	}
+	.slider img {
+    	width: 35vw;
+	}
+	.watch {
+		font-size: 22px;
+	}
+	.prices .number {
+		font-size: 76px;
+	}
+	.prices .number::after {
+		font-size: 30px;
+	}
+	.prices .red {
+		font-size: 30px;
+		padding-top: 8%;
+	}
+	.prices .label {
+		top: 20px;
+    	left: -62px;
+		padding: 6px 60px;
+		font-size: 13px;
+	}
+	.prices .more, .prices .star {
+		font-size: 15px;
+	}
+	/*button {
+		padding: 11px 40px;
+    	font-size: 15px;
+	}*/
+	#gallery p {
+		width: 56%;
+		margin-left: 22%;
+	}
+	.short {
+    	padding-left: calc(5vw + 9px);
+    	padding-right: calc(5vw + 9px);
+	}
+	#contact .map-label {
+		width: 28vw;
+		padding: 25px;
+    	padding-bottom: 35px;
+	}
+	footer {
+		font-size: 16px;
+		padding: 20px 6%;
+	}
+	
+	#service-boxes {
+		padding-right: 4vw;
+    	padding-left: 4vw;
+	}
+	#service-boxes a {
+    	width: calc(100% / 3 - 30px);
+		margin: 6px;
+	}
+	.download img {
+    	height: 52px;
+	}
+	.slider-join-now .figures {
+		top: -50vw;
+	}
+	.meet .trainer span:nth-of-type(1) {
+		font-size: 38px;
+	}
+	.meet .trainer span:nth-of-type(2) {
+		font-size: 20px;
+	}
+	.single-first {
+    	padding-top: 14vw;
+	}
+	.single-first .text {
+		top: 24vw;
+	}
+	.subsection-person-kids {
+    	top: 7vw;
+	}
+}
+@media screen and (max-width: 1200px) {
+	nav {
+		padding-left: 6%;
+    	padding-right: 6%;
+		height: 85px;
+	}
+	
+	#special-offer p:nth-of-type(1) {
+		font-size: 46px;
+	}
+	#special-offer p:nth-of-type(2) {
+		font-size: 60px;
+	}
+	#special-offer button {
+		font-size: 24px;
+		padding: 13px 70px;
+	}
+	#special-offer a {
+		margin-right: 2%;
+	}
+	.slider {
+    	padding-left: 10vw;
+	}
+	.slider img {
+    	width: 37vw;
+	}
+	.slider .text .number {
+		font-size: 120px;
+		padding-right: 16px;
+	}
+	.slider .text .right {
+		font-size: 20px;
+	}
+	.slider .text .right span {
+		font-size: 38px;
+	}
+	.slider .text .top {
+		padding-bottom: 12px;
+	}
+	.short div {
+		font-size: 20px;
+	}
+	.short div span {
+		font-size: 50px;
+	}
+	.prices .number {
+		font-size: 70px;
+	}
+	#about {
+		height: 105vh;
+	}
+	#about img {
+		height: 105vh;
+		object-position: 25%;
+	}
+	#about .text {
+		width: 51%;
+	}
+	.prices .number::after {
+		font-size: 28px;
+	}
+	.prices .red {
+		font-size: 29px;
+	}
+	.prices .more, .prices .star {
+		font-size: 17px;
+	}
+	.form {
+		padding: 30px 24px;
+	}
+	
+	.subpage-top{
+		padding-left: 8%;
+	}
+	.download img {
+    	height: 48px;
+	}
+	.about-person {
+		right: 6%;
+	}
+	
+	.joinnow-2 .person-right {
+		margin-top: 140px;
+	}
+	.joinnow-2 {
+		margin-top: 7vw;
+	}
+	.slider .text .right .mma {
+		font-size: 80px;
+		margin-left: -5px;
+	}
+	.slider-join-now {
+		margin-top: 100px;
+	}
+	
+	.subsection-person-kids {
+    	top: 10vw;
+	}
 }
 
+@media screen and (max-width: 1100px) {
+	p, .meet p {
+		font-size: 16px;
+	}
+	.short div {
+		font-size: 18px;
+	}
+	.short div span {
+		font-size: 46px;
+	}
+	.short button {
+		font-size: 20px;
+		padding: 12px 46px;
+	}
+	#special-offer button {
+		font-size: 20px;
+		padding: 12px 66px;
+	}
+	.slider .text {
+		left: 46vw;
+		width: 40vw;
+	}
+	.section-header, #gallery h2, .form h3 {
+		font-size: 46px;
+		padding-bottom: 20px;
+	}
+	.section-text {
+		padding-bottom: 40px;
+	}
+	.slider .leave {
+		font-size: 32px;
+		padding: 10px 110px 10px 10px;
+	}
+	.slider .l1 {
+		&:hover {
+			margin-right: 10px;
+			top: calc(7vw + 10px);
+		}
+	}
+	.slider .l2 {
+		top: calc(7vw + 90px);
+		&:hover {
+			margin-right: 10px;
+			top: calc(7vw + 100px);
+		}
+	}	
+	.slider .l3 {
+		top: calc(7vw + 180px);
+		&:hover {
+			margin-right: 10px;
+			top: calc(7vw + 190px);
+		}
+	}
+	.slider .l4 {
+		top: calc(7vw + 270px);
+		&:hover {
+			margin-right: 10px;
+			top: calc(7vw + 280px);
+		}
+	}
+	.slider .l5 {
+		top: calc(7vw + 360px);
+		&:hover {
+			margin-right: 10px;
+			top: calc(7vw + 370px);
+		}
+	}
+	.slider .l6 {
+		top: calc(7vw + 450px);
+		&:hover {
+			margin-right: 10px;
+			top: calc(7vw + 460px);
+		}
+	}
+	.prices .price {
+		width: 24vw;
+	}
+	.form {
+		padding: 42px 20px;
+		top: 8vh;
+    	left: 4vw;
+	}
+	.form input, .form textarea {
+		padding: 10px;
+		font-size: 17px;
+	}
+	#contact .map-label {
+		padding: 20px;
+    	padding-bottom: 30px;
+	}
+	#contact .map-label div:nth-of-type(1) {
+		font-size: 16px;
+		padding-bottom: 7px;
+	}
+	#contact .map-label div:nth-of-type(2),
+	#contact .map-label div:nth-of-type(3) {
+    	font-size: 15px;
+	}
+	footer {
+		font-size: 15px;
+		padding: 13px 4%;
+	}
+	#contact #map {
+		height: 105vh;
+	}
+	.label {
+		top: 25px;
+		left: -58px;
+	}
+	
+	#service-boxes {
+		margin-top: 140px;
+    	margin-bottom: 80px;
+	}
+	
+	.about-2 {
+		margin-bottom: 180px;
+	}
+	#testimonials {
+		padding-left: 10vw;
+		padding-right: 10vw;
+	}
+	#testimonials .box img {
+    	height: 280px;
+	}
+	#testimonials .text {
+		padding: 30px 20px 50px 20px;
+	}
+	#testimonials h2, .subpage-top h1 {
+		font-size: 66px;
+	}
+	#testimonials p {
+		padding-bottom: 80px;
+    	width: 70%;
+	}
+	.about-prices h2, .about-timetable h2, .block h2, .meet h2 {
+		font-size: 50px;
+	}
+	.about-prices .prices {
+		padding-bottom: 0;
+	}
+	.subpage-top h1 {
+		padding-top: 30px;
+	}
+	.about-timetable {
+		padding-left: 10vw;
+		padding-right: 10vw;
+	}
+	
+	.joinnow-2 {
+		margin-top: 14vw;
+	}
+	.joinnow-2 .person-right {
+		margin-top: 200px;
+	}
+	.joinnow-2 .person-right {
+		margin-left: 50vw;
+	}
+	
+	.block.single-first > img.person.person-left.mirror {
+		margin-left: 3vw;
+	}
+	.block.single-2 > img.person.person-right.mirror, .single-2 .figures {
+		margin-top: 14vw;
+	}
+	.single-first {
+		padding-top: 14vw;
+	}
+	.single-first .text {
+		top: 22vw;
+	}
+	.block .person-right {
+		margin-left: 52vw;
+	}
+	
+	.prices {
+		margin-top: 390px;
+		margin-bottom: -650px;
+	}
+}
+@media screen and (max-width: 1030px) {
+	.about-2 {
+		margin-bottom: 200px;
+	}
+	#testimonials h2, .subpage-top h1 {
+		font-size: 60px;
+	}
+	.subpage-top {
+		padding-left: 6%;
+	}
+	.about-1 {
+		margin-bottom: 100px;
+	}
+	#testimonials {
+		padding-left: 6vw;
+		padding-right: 6vw;
+	}
+	#testimonials .box img {
+		height: 240px;
+	}
+	#testimonials h3 {
+		font-size: 28px;
+	}
+	.about-prices {
+		margin-top: 70px;
+	}
+	.about-timetable {
+		padding-left: 6vw;
+		padding-right: 6vw;
+		padding-top: 70px;
+	}
+	.download img {
+    	height: 44px;
+	}
+	
+	.meet .trainer span:nth-of-type(1) {
+		font-size: 30px;
+		padding-bottom: 10px;
+	}
+	.meet .trainer span:nth-of-type(2) {
+		font-size: 16px;
+	}
+	
+	
+	
+	/* hamburger menu */
+	/* hamburger */
+	.menu-mobile {
+		display: block;
+		height: 25px;
+		cursor: pointer;
+		margin-right: 25px;
+	}
+	.menu-close {
+		display: block;
+		height: 40px;
+		z-index: 999999;
+		position: absolute;
+		top: 25px;
+		right: 45px;
+		cursor: pointer;
+	}
+	nav {
+		height: 90px;
+		padding-left: 25px;
+    	padding-right: 0;
+		background-color: transparent;
+		
+		ul {
+			display: none;
+			flex-direction: column;
+			align-items: center;
+			justify-content: center;
+			width: 100vw;
+			height: 100vh;
+			background-color: $white;
+			position: fixed;
+			top: 0;
+			left: 0;
+		}
+		ul li {
+			font-size: 3.5vh;
+			color: black;
+			padding: 15px 0;
+		}
+		ul a:last-of-type {
+			background-color: transparent;
+			box-shadow: none;
+		}
+	}
+	nav .facebook {
+		position: relative;
+		right: 0;
+		top: 5px;
+		filter: brightness(0%);
+		@include transition(filter);
+		
+		&:hover {
+			filter: brightness(100%);
+		}
+		img {
+			height: 30px;
+		}
+	}
+	
+	.only-desktop {
+		display: none;
+	}
+	.only-mobile {
+		display: block;
+	}
+	#special-offer {
+		flex-direction: column;
+		text-align: center;
+	}
+	#special-offer p:nth-of-type(2) {
+		padding: 5px 0 15px 0;
+	}
+	p, .meet p {
+		font-size: 17px;
+	}
+	.slider {
+    	padding-bottom: 100px;
+	}
+	#about {
+		height: 165vh;
+		padding-top: 7vh;
+		padding-bottom: 4vh;
+		align-items: flex-start;
+		padding-left: 6vw;
+    	padding-right: 6vw;
+	}
+	#about img {
+    	height: 165vh;
+		object-position: center 80%;
+	}
+	#about .text {
+		width: 100%;
+		text-align: center;
+	}
+	#about a {
+		margin-right: 10px;
+		margin-left: 10px;
+	}
+	.owl-dots {
+		display: none;
+	}
+	.owl-carousel .owl-item img {
+		margin-left: 50%;
+	}
+	#gallery {
+		padding-left: 0;
+		padding-right: 0;
+	}
+	.short {
+		text-align: center;
+		flex-direction: column;
+	}
+	.short div span {
+		padding-top: 6px;
+		padding-bottom: 20px;
+	}
+	.prices .price {
+		padding: 3% 3% 7% 3%;
+	}
+	#gallery .photos {
+		display: none;
+	}
+	
+	.prices {
+		flex-direction: column;
+		margin-bottom: -600px;
+		margin-top: 340px;
+	}
+	.prices .price {
+		width: 97%;
+		padding-left: 0;
+		padding-right: 0;
+		border-bottom: 4px solid $red;
+	}
+	.prices .price:nth-of-type(1) {
+		order: 1;
+	}
+	.prices .label {
+		top: 26px;
+		left: -56px;
+		padding: 7px 62px;
+	}
+	.prices button {
+		font-size: 18px;
+		padding: 13px 50px;
+		margin: 25px 0;
+	}
+	.prices .red {
+		width: 100%;
+		padding-top: 25px;
+		border-top: 2px dashed lightgray;
+	}
+	.prices .label {
+		top: 36px;
+		left: -54px;
+		padding: 8px 62px;
+		font-size: 18px;
+	}
+	.prices .star {
+		width: 92%;
+	}
+	#pricing > div:nth-child(2) > span.for {
+		padding-bottom: 20px;
+	}
+	.prices .number {
+		font-size: 90px;
+	}
+	.prices .number::after {
+		font-size: 36px;
+	}
+	.prices .for, .prices .more {
+		font-size: 22px;
+	}
+	.prices .red {
+		font-size: 36px;
+	}
+	.prices .star {
+		font-size: 18px;
+	}
+	.section-header, #gallery h2, .form h3, .short div span {
+    	font-size: 56px;
+	}
+	.form h3 {
+		font-size: 50px;
+	}
+	p, .meet p {
+		font-size: 20px;
+	}
+	.watch {
+		font-size: 26px;
+	}
+	.slider .text {
+		position: relative;
+		left: 0;
+		padding-bottom: 70px;
+	}
+	.short div {
+		font-size: 22px;
+	}
+	button {
+    	font-size: 18px;
+	}
+	.slider .button-white {
+		margin-left: 15px;
+	}
+	.slider button {
+		position: absolute;
+		width: 100%;
+		margin-top: 20px;
+	}
+	.b1 {
+		left: -40vw;
+    	width: 40vw;
+		margin-right: 15px;
+	}
+	.b2 {
+		left: 0;
+    	width: 40vw;
+	}
+	#contact #map {
+		height: 125vh;
+	}
+	#contact .map-label div:nth-of-type(2), #contact .map-label div:nth-of-type(3) {
+		font-size: 18px;
+	}
+	#contact .map-label div:nth-of-type(1) {
+    	font-size: 20px;
+	}
+	/*.form {
+		width: 47%;
+	}*/
+	
+	#contact #map {
+		height: 1200px;
+	}
+	#contact .map-label {
+		width: 50vw;
+	}
+	.form {
+		width: 90vw;
+		top: auto;
+		bottom: 45px;
+		left: 4vw;
+	}
+	
+	#service-boxes a {
+		width: calc(50% - 10px);
+		margin: 3px 5px;
+	}
+	#service-boxes {
+		margin-bottom: 50px;
+	}
+	#service-boxes {
+    	margin-top: 120px;
+	}
+	.subpage-top h1 {
+		padding-top: 0px;
+	}
+	.subsection-person {
+		top: -40px;
+		right: -17%;
+		width: 60%;
+	}
+	.block.single-first > img.person.person-left.mirror {
+		margin-left: -12vw;
+	}
+	.single-first .text {
+		top: 25vw;
+	}
+	.block .text-right {
+		left: 30vw;
+	}
+	.block .text {
+		width: 62vw;
+	}
+	.single-2 {
+		margin-top: 0;
+	}
+	
+	
+	/* single */
+	.subpage-top {
+		height: 110vh;
+	}
+	.subsection-bg {
+		height: 135vh;
+	}
+	.subpage-top {
+		padding-right: 35%;
+	}
+	.block .text {
+		position: relative;
+	}
+	.single-first .text {
+		top: 10vw;
+	}
+	.block .text-right {
+		left: -20px;
+	}
+	.block button {
+    	width: calc(50% - 20px);
+	}
+	.block .text-left {
+		left: 6vw;
+	}
+	.single-2 {
+		margin-top: 17vw;
+		margin-bottom: 30px;
+		.mirror {
+			-webkit-transform: rotateY(0deg);
+			transform: rotateY(0deg);
+		}
+	}
+	.block.single-2 > img.person.person-right.mirror, .single-2 .figures {
+		margin-top: -2vw;
+	}
+	.block .person {
+		width: 55vw;
+	}
+	.block .person-right {
+		margin-left: 5vw;
+		margin-right: -24vw;
+	}
+	.single-2 .text {
+		 top: 0; 
+	}
+	
+	.subsection-person-kids {
+    	top: 25vw;
+		right: -20%;
+    	width: 80%;
+	}
+	.subsection-figures-white {
+		right: -12vw;
+	}
+	.kids-2 .person-right {
+		transform: rotateY(180deg);
+		width: 35vw; 
+		margin-left: 7vw;
+	}
+}
+@media screen and (max-height: 580px) {
+	/*#contact #map {
+		height: 145vh;
+	}*/
+	.form h3 {
+		font-size: 48px;
+	}
+	#about {
+    	height: 195vh;
+	}
+	#about img {
+    	height: 195vh;
+	}
+}
+@media screen and (max-height: 500px) {
+	/*#contact #map {
+		height: 165vh;
+	}*/
+	.form h3 {
+		font-size: 44px;
+	}
+}
+@media screen and (max-aspect-ratio: 4/3) {
+	.prices {
+		margin-top: 420px;
+		margin-bottom: -570px;
+	}
+	#contact .map-label {
+		padding: 16px;
+		padding-bottom: 20px;
+	}
+	.joinnow-top .form {
+    	top: 23vh;
+	}
+	/*.slider {
+		min-height: 90vh;
+	}*/
+	#about {
+		height: 95vh;
+	}
+	.watch {
+		top: 52vh;
+	}
+}
+@media screen and (max-width: 860px) {
+	.slider {
+		padding-top: 120px;
+		padding-right: 4vw;
+	}
+	.slider .text .top {
+		top: -270px;
+		padding-bottom: 20vw;
+		left: 0vw;
+		position: absolute;
+	}
+	.slider img {
+		margin-left: -12vw;
+	}
+	.slider .text .number {
+    	font-size: 140px;
+	}
+	.slider .text .right {
+		font-size: 24px;
+	}
+	.slider .text .right span {
+		font-size: 42px;
+	}
+	.slider .text {
+		width: 65vw;
+		top: 140px;
+		left: -10vw;
+		padding-bottom: 140px;
+	}
+	.slider button {
+		width: 35vw;
+	}
+	.b1 {
+    	left: -16vw;
+	}
+	.b2 {
+    	left: auto;
+		right: -4vw;
+	}
+	.i2 {
+		margin-top: -80px;
+	}
+	.i5 {
+		margin-top: -80px;
+	}
+	
+	#about {
+		height: 265vh;
+	}
+	#about img {
+		height: 265vh;
+		object-position: center 55%;
+	}
+	
+	.form {
+    	width: 89vw;
+	}
+	
+	
+	#service-boxes a {
+		width: calc(100% - 10px);
+		margin: 3px 5px;
+	}
+	#service-boxes {
+    	margin-top: 100px;
+	}
+	
+	.block button {
+		width: 100%;
+		margin-bottom: 15px;
+	}
+	.block a:nth-of-type(2) {
+		margin-left: 0;
+	}
+}
+@media screen and (max-width: 800px) {
+	.subsection-bg {
+		height: 160vh;
+	}
+	.subpage-top {
+		height: 130vh;
+	}
+	.subsection-person {
+		top: -40px;
+		right: -23%;
+		width: 72%;
+	}
+	.single-first .text {
+		top: 17vw;
+	}
+	.single-2 {
+    	margin-top: 26vw;
+	}
+}
+@media screen and (max-width: 780px) {
+	.short div {
+		font-size: 4.5vw;
+		text-align: center;
+		width: 100%;
+		line-height: 1.1;
+	}
+	.short div span {
+		line-height: 1;
+		font-size: 13vw;
+	}
+	.short button {
+		width: 86vw;
+	}
+	.subsection-bg {
+		height: 190vh;
+	}
+	.subpage-top {
+		height: 150vh;
+	}
+	.subpage-top {
+		padding-right: 30%;
+	}
+	.subsection-person {
+		top: -60px;
+		right: -30%;
+		width: 80%;
+	}
+	.single-first .text {
+		top: 25vw;
+	}
+	.single-2 {
+		margin-top: 35vw;
+	}
+	.block.single-2 > img.person.person-right.mirror, .single-2 .figures {
+		margin-top: -25vw;
+	}
+}
+@media screen and (max-width: 700px) {
+	.slider .text .number {
+		font-size: 120px;
+	}
+	.slider .text .right {
+		font-size: 22px;
+	}
+	.slider .text .right span {
+		font-size: 37px;
+	}
+	.slider .text .top {
+		top: -230px;
+	}
+	.slider .text {
+		left: -12vw;
+		top: 110px;
+	}
+	.slider {
+    	padding-top: 120px;
+		padding-bottom: 60px;
+	}
+	.b1 {
+		left: -12vw;
+	}
+	#about {
+		height: 245vh;
+	}
+	#about img {
+		height: 245vh;
+		object-position: center 55%;
+	}
+	.prices .price {
+		padding: 3% 3% 11% 3%;
+	}
+	.prices {
+		margin-bottom: -650px;
+	}
+	#gallery p {
+		width: 86%;
+		margin-left: 7%;
+	}
+	.short div span {
+		line-height: 1;
+		font-size: 12vw;
+	}
+	
+	.subsection-bg {
+		height: 200vh;
+		clip-path: polygon(0 0, 100% 0%, 100% 100%, 0 85%);
+	}
+	.subpage-top {
+		height: 170vh;
+	}
+	
+	.subsection-figures-white {
+		right: -10vw;
+	}
+	.subsection-person {
+		top: -20px;
+		right: -40%;
+		width: 90%;
+	}
+	.block.single-first > img.person.person-left.mirror {
+		margin-top: -20vw;
+	}
+	.short {
+		padding-top: 40px;
+	}
+	#testimonials h2, .subpage-top h1 {
+		font-size: 56px;
+	}
+	.subpage-top h1 {
+		padding-top: 30px;
+	}
+	.about-prices h2, .about-timetable h2, .block h2, .meet h2 {
+		font-size: 46px;
+	}
+}
+@media screen and (max-width: 650px) {
+	#special-offer p:nth-of-type(1) {
+		font-size: 40px;
+	}
+	#special-offer p:nth-of-type(2) {
+		font-size: 54px;
+	}
+	#special-offer button {
+		font-size: 20px;
+		padding: 12px 56px;
+	}
+	.section-header, #gallery h2, .form h3 {
+		font-size: 50px;
+	}
+	nav {
+    	height: 75px;
+	}
+	nav .logo img {
+		height: 55px;
+	}
+	.menu-mobile {
+		height: 20px;
+	}
+	.watch {
+		font-size: 20px;
+	}
+	.watch img {
+		height: 16px;
+		padding-left: 16px;
+	}
+	.slider button {
+		width: 40vw;
+	}
+	.b1 {
+		left: -17vw;
+	}
+	.b2 {
+		right: -10vw;
+	}
+	.short {
+		padding-top: 40px;
+	}
+	#about {
+		height: 305vh;
+	}
+	#about img {
+		height: 305vh;
+		object-position: center 55%;
+	}
+	.menu-close {
+		height: 30px;
+	}
+	nav ul li {
+		font-size: 6vh;
+		color: black;
+		padding: 7px 0;
+	}
+	.form {
+    	width: 88vw;
+	}
+	.about-prices h2, .about-timetable h2, .block h2, .meet h2 {
+		font-size: 40px;
+	}
+	.block.single-first > img.person.person-left.mirror {
+		margin-top: -28vw;
+	}
+	
+}
+@media screen and (max-width: 600px) {
+	.owl-carousel .owl-item img {
+		margin-left: 0%;
+	}
+	.subsection-bg {
+		height: 240vh;
+		clip-path: polygon(0 0, 100% 0%, 100% 100%, 0 85%);
+	}
+	.subpage-top {
+		height: 210vh;
+	}
+	.subsection-person {
+		top: 50px;
+		right: -50%;
+		width: 100%;
+	}
+	.block.single-first > img.person.person-left.mirror {
+		margin-top: -60vw;
+	}
+	.single-first {
+		padding-top: 22vw;
+	}
+}
+@media screen and (max-width: 570px) {
+	.prices .number {
+		font-size: 80px;
+	}
+	.prices .number::after {
+		font-size: 32px;
+	}
+	.prices .for, .prices .more {
+		font-size: 18px;
+	}
+	.prices .star {
+		font-size: 17px;
+	}
+	#contact .map-label {
+		width: 60vw;
+	}
+	.section-header, #gallery h2, .form h3 {
+		font-size: 46px;
+	}
+	.slider button {
+		width: 42vw;
+		padding: 12px 10px;
+	}
+	#about {
+		height: 345vh;
+	}
+	#about img {
+		height: 345vh;
+		object-position: center 55%;
+	}
+	.prices {
+		margin-bottom: -740px;
+	}
+}
+@media screen and (max-width: 500px) {
+	.form {
+    	width: 87vw;
+	}
+}
 
-
-
+@media screen and (orientation: portrait) {
+	.watch {
+		top: 39vw;
+	}
+	#about {
+		height: 90vh;
+	}
+	#about img {
+    	height: 90vh;
+	}
+	.prices {
+		margin-top: 200px;
+		margin-bottom: -420px;
+	}
+	#gallery p {
+		width: 86%;
+		margin-left: 7%;
+	}
+	#contact .map-label {
+		width: 55vw;
+	}
+	
+	.subpage-top {
+		height: 50vh;
+	}
+	.subsection-bg {
+		height: 55vh;
+		clip-path: polygon(0 0, 100% 0%, 100% 100%, 0 85%);
+	}
+	.subsection-figures-white {
+		top: 14vh;
+    	right: -13vw;
+    	width: 85%;
+	}
+	.single-first .text {
+		top: 0;
+	}
+	.single-2 {
+		margin-top: 10vw;
+	}
+}
+@media screen and (orientation: portrait) and (max-width: 800px) {
+	.prices {
+		margin-top: -50px;
+		margin-bottom: 0px;
+	}
+	.block.single-first > img.person.person-left.mirror {
+		margin-top: -30vw;
+	}
+	.subpage-top {
+		height: 60vh;
+	}
+	.subsection-bg {
+		height: 65vh;
+		clip-path: polygon(0 0, 100% 0%, 100% 100%, 0 85%);
+	}
+	.single-first .text {
+		top: 6vw;
+	}
+	.single-first {
+		padding-top: 20vw;
+	}
+	.single-2 {
+		margin-top: 16vw;
+	}
+	p, .meet p {
+		font-size: 19px;
+	}
+}
+@media screen and (orientation: portrait) and (max-width: 650px) {
+	#contact .map-label {
+		width: 65vw;
+	}
+	nav ul li {
+		font-size: 4vh;
+		color: black;
+		padding: 10px 0;
+	}
+	.subpage-top {
+		height: 70vh;
+	}
+	.subsection-bg {
+		height: 80vh;
+		clip-path: polygon(0 0, 100% 0%, 100% 100%, 0 85%);
+	}
+	.single-first {
+		padding-top: 40vw;
+	}
+}
+@media screen and (orientation: portrait) and (max-width: 580px) {
+	#special-offer p:nth-of-type(1) {
+		font-size: 32px;
+	}
+	#special-offer p:nth-of-type(2) {
+		font-size: 48px;
+	}
+	#special-offer button {
+		padding: 12px 48px;
+	}
+	.slider .text .top {
+		left: -10vw;
+	}
+	.slider button {
+    	width: 40vw;
+	}
+	#about {
+		height: 140vh;
+		
+		button {
+			width: 100%;
+    		margin-top: 10px;
+		}
+	}
+	#about img {
+		height: 140vh;
+	}
+	
+	.subpage-top {
+		height: 88vh;
+	}
+	.subsection-bg {
+		height: 98vh;
+		clip-path: polygon(0 0, 100% 0%, 100% 100%, 0 85%);
+	}
+	.subsection-person {
+    	top: 100px;
+	}
+	.about-prices h2, .about-timetable h2, .block h2, .meet h2 {
+		font-size: 36px;
+	}
+	p, .meet p {
+		font-size: 18px;
+	}
+	.subpage-top h1 {
+		padding-top: 0;
+	}
+	button {
+		padding: 12px 32px;
+	}
+	.single-first {
+		padding-top: 36vw;
+	}
+}
+@media screen and (orientation: portrait) and (max-width: 500px) {
+	#special-offer p:nth-of-type(1) {
+    	font-size: 28px;
+	}
+	#special-offer p:nth-of-type(2) {
+		font-size: 44px;
+	}
+	.slider .text .number {
+		padding-right: 2px;
+		font-size: 100px;
+	}
+	.slider .text .right {
+		font-size: 20px;
+	}
+	.slider .text .right span {
+		font-size: 30px;
+	}
+	
+	#testimonials h2, .subpage-top h1 {
+		font-size: 50px;
+	}
+	.subpage-top {
+		height: 95vh;
+	}
+	.subsection-bg {
+		height: 105vh;
+	}
+	.block, .block .single-2 {
+    	flex-direction: column-reverse;
+	}
+	.single-first .text {
+		top: 0vw;
+	}
+	.block .text-right {
+		left: 0;
+	}
+	.block .text, .block .single-2 {
+		width: 80vw;
+		left: 0;
+	}
+	.block .person {
+		display: none;
+	}
+	.subpage-top {
+		padding-right: 25%;
+	}
+	.single-first {
+		padding-top: 25vw;
+	}
+}
+@media screen and (orientation: portrait) and (max-width: 440px) {
+	.prices .price {
+		padding: 3% 3% 22% 3%;
+	}
+	#about {
+		height: 180vh;
+	}
+	#about img {
+		height: 180vh;
+	}
+	#special-offer p:nth-of-type(2) {
+		font-size: 38px;
+	}
+	.watch {
+		top: 36vw;
+		font-size: 17px;
+	}
+}
